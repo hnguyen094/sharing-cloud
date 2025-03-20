@@ -15,14 +15,19 @@ let package = Package(
         .library(
             name: "SharingCloud",
             targets: ["SharingCloud"]
-        ),
+        )
+    ],
+    dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-sharing", from: "2.0.0")
     ],
     targets: [
         .target(
             name: "SharingCloud",
-            dependencies: [],
+            dependencies: [
+                .product(name: "Sharing", package: "swift-sharing")
+            ],
             path: "",
             sources: ["Sources"]
-        ),
+        )
     ]
 )
