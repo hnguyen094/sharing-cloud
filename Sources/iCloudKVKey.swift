@@ -19,9 +19,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Bool> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Bool> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an integer iCloud key-value store.
@@ -29,9 +29,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Int> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Int> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to a double iCloud key-value store.
@@ -39,9 +39,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Double> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Double> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to a string iCloud key-value store.
@@ -49,9 +49,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<String> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<String> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to a URL iCloud key-value store.
@@ -59,9 +59,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<URL> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<URL> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an iCloud key-value store as data.
@@ -69,9 +69,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Data> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Data> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to a date iCloud key-value store.
@@ -79,9 +79,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Date> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Date> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an integer iCloud key-value store, transforming
@@ -90,11 +90,11 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV<Value: RawRepresentable<Int>>(
+  static func CloudStorage<Value: RawRepresentable<Int>>(
     _ key: String
   ) -> Self
-    where Self == iCloudKVKey<Value> {
-    iCloudKVKey(key)
+    where Self == CloudStorageKey<Value> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to a string iCloud key-value store, transforming
@@ -103,11 +103,11 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV<Value: RawRepresentable<String>>(
+  static func CloudStorage<Value: RawRepresentable<String>>(
     _ key: String
   ) -> Self
-    where Self == iCloudKVKey<Value> {
-    iCloudKVKey(key)
+    where Self == CloudStorageKey<Value> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an optional boolean iCloud key-value store.
@@ -115,9 +115,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Bool?> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Bool?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an optional integer iCloud key-value store.
@@ -125,9 +125,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Int?> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Int?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an optional double iCloud key-value store.
@@ -135,9 +135,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Double?> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Double?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an optional string iCloud key-value store.
@@ -145,9 +145,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<String?> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<String?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an optional URL iCloud key-value store.
@@ -155,9 +155,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<URL?> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<URL?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an iCloud key-value store as optional data.
@@ -165,9 +165,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Data?> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Data?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an optional date iCloud key-value store.
@@ -175,9 +175,9 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV(_ key: String) -> Self
-    where Self == iCloudKVKey<Date?> {
-    iCloudKVKey(key)
+  static func cloudStorage(_ key: String) -> Self
+    where Self == CloudStorageKey<Date?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to an integer iCloud key-value store, transforming
@@ -186,11 +186,11 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV<Value: RawRepresentable>(
+  static func CloudStorage<Value: RawRepresentable>(
     _ key: String
   ) -> Self
-    where Value.RawValue == Int, Self == iCloudKVKey<Value?> {
-    iCloudKVKey(key)
+    where Value.RawValue == Int, Self == CloudStorageKey<Value?> {
+    CloudStorageKey(key)
   }
 
   /// Creates a shared key that can read and write to a string iCloud key-value store, transforming
@@ -199,22 +199,22 @@ public extension SharedReaderKey {
   /// - Parameters:
   ///   - key: The key to read and write the value to in the iCloud key-value store.
   /// - Returns: An iCloud key-value store shared key.
-  static func iCloudKV<Value: RawRepresentable>(
+  static func CloudStorage<Value: RawRepresentable>(
     _ key: String
   ) -> Self
-    where Value.RawValue == String, Self == iCloudKVKey<Value?> {
-    iCloudKVKey(key)
+    where Value.RawValue == String, Self == CloudStorageKey<Value?> {
+    CloudStorageKey(key)
   }
 }
 
 /// A type defining an iCloud key-value store persistence strategy.
-public struct iCloudKVKey<Value: Sendable>: SharedKey {
+public struct CloudStorageKey<Value: Sendable>: SharedKey {
   private let lookup: any Lookup<Value>
   private let key: String
   private nonisolated(unsafe) let store: NSUbiquitousKeyValueStore
 
-  public var id: iCloudKVKeyID {
-    iCloudKVKeyID(key: key)
+  public var id: CloudStorageKeyID {
+    CloudStorageKeyID(key: key)
   }
 
   private init(lookup: some Lookup<Value>, key: String) {
@@ -371,7 +371,7 @@ public struct iCloudKVKey<Value: Sendable>: SharedKey {
         return
       }
 
-      guard !SharediCloudKVLocals.isSetting
+      guard !SharedCloudStorageLocals.isSetting
       else { return }
 
       DispatchQueue.main.async {
@@ -421,18 +421,18 @@ public struct iCloudKVKey<Value: Sendable>: SharedKey {
   }
 }
 
-extension iCloudKVKey: CustomStringConvertible {
+extension CloudStorageKey: CustomStringConvertible {
   public var description: String {
-    ".iCloudKV(\(String(reflecting: key)))"
+    ".cloudStorage(\(String(reflecting: key)))"
   }
 }
 
-public struct iCloudKVKeyID: Hashable {
+public struct CloudStorageKeyID: Hashable {
   fileprivate let key: String
 }
 
 // For local state tracking
-private enum SharediCloudKVLocals {
+private enum SharedCloudStorageLocals {
   @TaskLocal static var isSetting = false
 }
 
@@ -455,10 +455,10 @@ private struct CastableLookup<Value: Sendable>: Lookup {
   ) -> Value? {
     guard let value = store.object(forKey: key) as? Value
     else {
-      guard !SharediCloudKVLocals.isSetting
+      guard !SharedCloudStorageLocals.isSetting
       else { return nil }
 
-      SharediCloudKVLocals.$isSetting.withValue(true) {
+      SharedCloudStorageLocals.$isSetting.withValue(true) {
         store.set(defaultValue, forKey: key)
       }
       return defaultValue
@@ -467,7 +467,7 @@ private struct CastableLookup<Value: Sendable>: Lookup {
   }
 
   func saveValue(_ newValue: Value, to store: NSUbiquitousKeyValueStore, at key: String) {
-    SharediCloudKVLocals.$isSetting.withValue(true) {
+    SharedCloudStorageLocals.$isSetting.withValue(true) {
       store.set(newValue, forKey: key)
     }
   }
@@ -479,10 +479,10 @@ private struct URLLookup: Lookup {
   func loadValue(from store: NSUbiquitousKeyValueStore, at key: String, default defaultValue: URL?) -> URL? {
     guard let stringValue = store.string(forKey: key), let url = URL(string: stringValue)
     else {
-      guard !SharediCloudKVLocals.isSetting
+      guard !SharedCloudStorageLocals.isSetting
       else { return nil }
       if let defaultValue {
-        SharediCloudKVLocals.$isSetting.withValue(true) {
+        SharedCloudStorageLocals.$isSetting.withValue(true) {
           store.set(defaultValue.absoluteString, forKey: key)
         }
       }
@@ -492,7 +492,7 @@ private struct URLLookup: Lookup {
   }
 
   func saveValue(_ newValue: URL, to store: NSUbiquitousKeyValueStore, at key: String) {
-    SharediCloudKVLocals.$isSetting.withValue(true) {
+    SharedCloudStorageLocals.$isSetting.withValue(true) {
       store.set(newValue.absoluteString, forKey: key)
     }
   }
@@ -527,7 +527,7 @@ private struct OptionalLookup<Base: Lookup>: Lookup {
     if let newValue {
       base.saveValue(newValue, to: store, at: key)
     } else {
-      SharediCloudKVLocals.$isSetting.withValue(true) {
+      SharedCloudStorageLocals.$isSetting.withValue(true) {
         store.removeObject(forKey: key)
       }
     }

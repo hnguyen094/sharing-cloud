@@ -9,7 +9,7 @@ SharingCloud provides a simple and elegant way to sync shared data across multip
 ## Features
 
 - **Seamless iCloud Integration**: Automatically sync data between iOS, macOS, watchOS, and tvOS devices
-- **Simple Property Wrapper Syntax**: Use the familiar `@Shared` syntax with the `.iCloudKV` storage strategy
+- **Simple Property Wrapper Syntax**: Use the familiar `@Shared` syntax with the `.cloudStorage` storage strategy
 - **Comprehensive Type Support**:
   - Primitives: Bool, Int, Double, String
   - Complex Types: URL, Data, Date
@@ -48,23 +48,23 @@ import SharingCloud
 @Observable
 class SettingsModel {
     @ObservationIgnored
-    @Shared(.iCloudKV("userPreferences")) 
+    @Shared(.cloudStorage("userPreferences")) 
     var isDarkModeEnabled: Bool = false
     
     @ObservationIgnored
-    @Shared(.iCloudKV("notificationsEnabled")) 
+    @Shared(.cloudStorage("notificationsEnabled")) 
     var notificationsEnabled: Bool = true
     
     @ObservationIgnored
-    @Shared(.iCloudKV("fontSize")) 
+    @Shared(.cloudStorage("fontSize")) 
     var fontSize: Int = 14
 }
 
 // In a SwiftUI view
 struct SettingsView: View {
-    @Shared(.iCloudKV("userPreferences")) private var isDarkModeEnabled: Bool = false
-    @Shared(.iCloudKV("notificationsEnabled")) private var notificationsEnabled: Bool = true
-    @Shared(.iCloudKV("fontSize")) private var fontSize: Int = 14
+    @Shared(.cloudStorage("userPreferences")) private var isDarkModeEnabled: Bool = false
+    @Shared(.cloudStorage("notificationsEnabled")) private var notificationsEnabled: Bool = true
+    @Shared(.cloudStorage("fontSize")) private var fontSize: Int = 14
     
     var body: some View {
         Form {
@@ -86,7 +86,7 @@ enum Theme: String, Sendable {
 }
 
 struct ThemeSettingsView: View {
-    @Shared(.iCloudKV("appTheme")) private var theme: Theme = .system
+    @Shared(.cloudStorage("appTheme")) private var theme: Theme = .system
     
     var body: some View {
         Picker("Theme", selection: $theme) {
@@ -103,7 +103,7 @@ struct ThemeSettingsView: View {
 Storing a URL example:
 
 ```swift
-@Shared(.iCloudKV("lastVisitedURL")) var lastURL: URL?
+@Shared(.cloudStorage("lastVisitedURL")) var lastURL: URL?
 ```
 
 ### Other Shared Use Casess
